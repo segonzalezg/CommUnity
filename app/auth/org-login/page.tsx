@@ -114,7 +114,7 @@ export default function OrgLoginPage() {
               <p className="text-sm text-gray-600 dark:text-gray-400">
                 Don&apos;t have an organization account?{" "}
                 <Link
-                  href="/auth/signup"
+                  href="/auth/org-signup"
                   className="text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium"
                 >
                   Sign up

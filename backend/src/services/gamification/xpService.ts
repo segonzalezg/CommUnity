@@ -251,7 +251,7 @@ export function getLeaderboard(limit: number = 10): Array<{
 /**
  * Reset mock data (for testing purposes)
  */
-export function resetMockData(): void {
+export function resetXPMockData(): void {
   mockUserXP.clear();
   mockXPTransactions.clear();
 }

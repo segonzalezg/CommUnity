@@ -495,6 +495,6 @@ export function getAllAchievementsWithProgress(
 /**
  * Reset mock data (for testing)
  */
-export function resetMockData(): void {
+export function resetAchievementMockData(): void {
   mockUserAchievements.clear();
 }

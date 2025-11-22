@@ -397,7 +397,7 @@ export function updateUserStats(
 /**
  * Reset mock data (for testing)
  */
-export function resetMockData(): void {
+export function resetBadgeMockData(): void {
   mockUserBadges.clear();
   mockUserStats.clear();
 }

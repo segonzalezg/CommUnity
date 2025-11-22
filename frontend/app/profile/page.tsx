@@ -5,7 +5,7 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { useEffect, useState } from "react";
-import { User } from "@/types";
+import { User, UserRole } from "@/types";
 
 export default function ProfilePage() {
   const [user, setUser] = useState<User | null>(null);
@@ -32,8 +32,22 @@ export default function ProfilePage() {
   const [newSkill, setNewSkill] = useState("");
 
   // Options
-  const availabilityOptions = ["Weekends", "Weekdays", "Mornings", "Afternoons", "Evenings"];
-  const preferenceOptions = ["Environment", "Education", "Social Causes", "Health", "Animals", "Arts & Culture", "Technology"];
+  const availabilityOptions = [
+    "Weekends",
+    "Weekdays",
+    "Mornings",
+    "Afternoons",
+    "Evenings",
+  ];
+  const preferenceOptions = [
+    "Environment",
+    "Education",
+    "Social Causes",
+    "Health",
+    "Animals",
+    "Arts & Culture",
+    "Technology",
+  ];
 
   useEffect(() => {
     // Mock data - will connect to API later
@@ -47,7 +61,7 @@ export default function ProfilePage() {
       phoneNumber: "+1 (555) 123-4567",
       isEmailVerified: true,
       isActive: true,
-      role: "USER" as any,
+      role: UserRole.USER,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
       xp: 1250,
@@ -95,12 +109,12 @@ export default function ProfilePage() {
   };
 
   const handleRemoveSkill = (skillToRemove: string) => {
-    setSkills(skills.filter(skill => skill !== skillToRemove));
+    setSkills(skills.filter((skill) => skill !== skillToRemove));
   };
 
   const handleToggleAvailability = (option: string) => {
     if (availability.includes(option)) {
-      setAvailability(availability.filter(a => a !== option));
+      setAvailability(availability.filter((a) => a !== option));
     } else {
       setAvailability([...availability, option]);
     }
@@ -108,7 +122,7 @@ export default function ProfilePage() {
 
   const handleTogglePreference = (option: string) => {
     if (preferences.includes(option)) {
-      setPreferences(preferences.filter(p => p !== option));
+      setPreferences(preferences.filter((p) => p !== option));
     } else {
       setPreferences([...preferences, option]);
     }
@@ -129,21 +143,25 @@ export default function ProfilePage() {
       <Layout>
         <Card>
           <CardContent className="text-center py-12">
-            <p className="text-gray-500 dark:text-gray-400 text-lg">User not found</p>
+            <p className="text-gray-500 dark:text-gray-400 text-lg">
+              User not found
+            </p>
           </CardContent>
         </Card>
       </Layout>
     );
   }
 
-
-
   return (
     <Layout>
       <div className="max-w-4xl mx-auto space-y-6">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">My Profile</h1>
-          <p className="text-gray-600 dark:text-gray-400">Manage your profile and preferences</p>
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+            My Profile
+          </h1>
+          <p className="text-gray-600 dark:text-gray-400">
+            Manage your profile and preferences
+          </p>
         </div>
 
         {/* Profile Header */}
@@ -168,16 +186,22 @@ export default function ProfilePage() {
                     </Button>
                   )}
                 </div>
-                <p className="text-gray-600 dark:text-gray-400 mb-4">@{user.username}</p>
+                <p className="text-gray-600 dark:text-gray-400 mb-4">
+                  @{user.username}
+                </p>
                 <div className="flex items-center space-x-4 text-sm">
                   <div>
-                    <span className="text-gray-500 dark:text-gray-400">Level </span>
+                    <span className="text-gray-500 dark:text-gray-400">
+                      Level{" "}
+                    </span>
                     <span className="font-semibold text-blue-600 dark:text-blue-400">
                       {user.level || 1}
                     </span>
                   </div>
                   <div>
-                    <span className="text-gray-500 dark:text-gray-400">XP </span>
+                    <span className="text-gray-500 dark:text-gray-400">
+                      XP{" "}
+                    </span>
                     <span className="font-semibold text-purple-600 dark:text-purple-400">
                       {user.xp || 0}
                     </span>
@@ -242,7 +266,9 @@ export default function ProfilePage() {
                   <label className="text-sm font-medium text-gray-500 dark:text-gray-400">
                     Display Name
                   </label>
-                  <p className="text-gray-900 dark:text-white">{user.displayName}</p>
+                  <p className="text-gray-900 dark:text-white">
+                    {user.displayName}
+                  </p>
                 </div>
                 <div>
                   <label className="text-sm font-medium text-gray-500 dark:text-gray-400">
@@ -259,8 +285,12 @@ export default function ProfilePage() {
                   </p>
                 </div>
                 <div>
-                  <label className="text-sm font-medium text-gray-500 dark:text-gray-400">Bio</label>
-                  <p className="text-gray-900 dark:text-white">{user.bio || "No bio yet"}</p>
+                  <label className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                    Bio
+                  </label>
+                  <p className="text-gray-900 dark:text-white">
+                    {user.bio || "No bio yet"}
+                  </p>
                 </div>
               </div>
             )}
@@ -273,7 +303,11 @@ export default function ProfilePage() {
             <CardTitle className="flex justify-between items-center">
               Skills
               {!isEditingSkills && (
-                <Button variant="ghost" size="sm" onClick={() => setIsEditingSkills(true)}>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setIsEditingSkills(true)}
+                >
                   Edit
                 </Button>
               )}
@@ -307,20 +341,28 @@ export default function ProfilePage() {
                     placeholder="Add a new skill..."
                     className="max-w-xs"
                     onKeyDown={(e) => {
-                      if (e.key === 'Enter') {
+                      if (e.key === "Enter") {
                         e.preventDefault();
                         handleAddSkill();
                       }
                     }}
                   />
-                  <Button onClick={handleAddSkill} type="button">Add</Button>
+                  <Button onClick={handleAddSkill} type="button">
+                    Add
+                  </Button>
                 </div>
                 <div className="flex gap-2">
-                  <Button onClick={() => setIsEditingSkills(false)}>Save</Button>
+                  <Button onClick={() => setIsEditingSkills(false)}>
+                    Save
+                  </Button>
                 </div>
               </div>
             ) : (
-              <Button variant="outline" size="sm" onClick={() => setIsEditingSkills(true)}>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setIsEditingSkills(true)}
+              >
                 Add Skill
               </Button>
             )}
@@ -333,7 +375,11 @@ export default function ProfilePage() {
             <CardTitle className="flex justify-between items-center">
               Availability
               {!isEditingAvailability && (
-                <Button variant="ghost" size="sm" onClick={() => setIsEditingAvailability(true)}>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setIsEditingAvailability(true)}
+                >
                   Edit
                 </Button>
               )}
@@ -347,16 +393,19 @@ export default function ProfilePage() {
                     <button
                       key={option}
                       onClick={() => handleToggleAvailability(option)}
-                      className={`px-3 py-1 rounded-full text-sm font-medium border transition-colors ${availability.includes(option)
+                      className={`px-3 py-1 rounded-full text-sm font-medium border transition-colors ${
+                        availability.includes(option)
                           ? "bg-green-100 border-green-200 text-green-700 dark:bg-green-900 dark:border-green-800 dark:text-green-300"
                           : "bg-gray-50 border-gray-200 text-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700"
-                        }`}
+                      }`}
                     >
                       {option}
                     </button>
                   ))}
                 </div>
-                <Button onClick={() => setIsEditingAvailability(false)}>Save</Button>
+                <Button onClick={() => setIsEditingAvailability(false)}>
+                  Save
+                </Button>
               </div>
             ) : (
               <>
@@ -370,7 +419,12 @@ export default function ProfilePage() {
                     </span>
                   ))}
                 </div>
-                <Button variant="outline" size="sm" className="mt-4" onClick={() => setIsEditingAvailability(true)}>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="mt-4"
+                  onClick={() => setIsEditingAvailability(true)}
+                >
                   Update Availability
                 </Button>
               </>
@@ -384,7 +438,11 @@ export default function ProfilePage() {
             <CardTitle className="flex justify-between items-center">
               Event Preferences
               {!isEditingPreferences && (
-                <Button variant="ghost" size="sm" onClick={() => setIsEditingPreferences(true)}>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setIsEditingPreferences(true)}
+                >
                   Edit
                 </Button>
               )}
@@ -398,16 +456,19 @@ export default function ProfilePage() {
                     <button
                       key={option}
                       onClick={() => handleTogglePreference(option)}
-                      className={`px-3 py-1 rounded-full text-sm font-medium border transition-colors ${preferences.includes(option)
+                      className={`px-3 py-1 rounded-full text-sm font-medium border transition-colors ${
+                        preferences.includes(option)
                           ? "bg-purple-100 border-purple-200 text-purple-700 dark:bg-purple-900 dark:border-purple-800 dark:text-purple-300"
                           : "bg-gray-50 border-gray-200 text-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700"
-                        }`}
+                      }`}
                     >
                       {option}
                     </button>
                   ))}
                 </div>
-                <Button onClick={() => setIsEditingPreferences(false)}>Save</Button>
+                <Button onClick={() => setIsEditingPreferences(false)}>
+                  Save
+                </Button>
               </div>
             ) : (
               <>
@@ -421,7 +482,12 @@ export default function ProfilePage() {
                     </span>
                   ))}
                 </div>
-                <Button variant="outline" size="sm" className="mt-4" onClick={() => setIsEditingPreferences(true)}>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="mt-4"
+                  onClick={() => setIsEditingPreferences(true)}
+                >
                   Update Preferences
                 </Button>
               </>
@@ -432,4 +498,3 @@ export default function ProfilePage() {
     </Layout>
   );
 }
-

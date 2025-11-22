@@ -5,7 +5,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <WebsiteNavbar />
-      
+
       <main className="flex-1">
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 py-20">
@@ -14,8 +14,8 @@ export default function AboutPage() {
               About CommUnity
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-400">
-              Empowering communities through meaningful connections and
-              gamified volunteering
+              Empowering communities through meaningful connections and gamified
+              volunteering
             </p>
           </div>
         </section>
@@ -28,9 +28,9 @@ export default function AboutPage() {
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
               CommUnity was born from a simple belief: volunteering should be
-              accessible, rewarding, and fun. We're on a mission to bridge the
-              gap between passionate volunteers and organizations that need their
-              help.
+              accessible, rewarding, and fun. We&apos;re on a mission to bridge
+              the gap between passionate volunteers and organizations that need
+              their help.
             </p>
             <p className="text-lg text-gray-600 dark:text-gray-400">
               By gamifying the volunteering experience, we make it easier for
@@ -92,7 +92,7 @@ export default function AboutPage() {
                   Transparency
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400">
-                  We're committed to transparency in how we operate, how we
+                  We&apos;re committed to transparency in how we operate, how we
                   match volunteers, and how we track impact.
                 </p>
               </div>
@@ -134,17 +134,17 @@ export default function AboutPage() {
             <div className="prose prose-lg dark:prose-invert max-w-none">
               <p className="text-gray-600 dark:text-gray-400 mb-4">
                 CommUnity started when our founders noticed a common problem:
-                many people wanted to volunteer but didn't know where to start,
-                and organizations struggled to find the right volunteers for their
-                events.
+                many people wanted to volunteer but didn&apos;t know where to
+                start, and organizations struggled to find the right volunteers
+                for their events.
               </p>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
-                We realized that by combining modern technology with gamification
-                principles, we could create a platform that makes volunteering
-                more engaging and accessible. Our smart matching algorithm
-                connects volunteers with opportunities that align with their
-                skills and interests, while our gamification system rewards
-                consistent participation and impact.
+                We realized that by combining modern technology with
+                gamification principles, we could create a platform that makes
+                volunteering more engaging and accessible. Our smart matching
+                algorithm connects volunteers with opportunities that align with
+                their skills and interests, while our gamification system
+                rewards consistent participation and impact.
               </p>
               <p className="text-gray-600 dark:text-gray-400">
                 Today, CommUnity is helping thousands of volunteers make a
@@ -159,4 +159,3 @@ export default function AboutPage() {
     </div>
   );
 }
-

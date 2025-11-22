@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { WebsiteNavbar } from "@/components/website/WebsiteNavbar";
 import { Footer } from "@/components/website/Footer";
 import { Button } from "@/components/ui/Button";
@@ -7,7 +6,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       <WebsiteNavbar />
-      
+
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
@@ -24,7 +23,11 @@ export default function Home() {
                 earn rewards through our gamified community platform.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" href="/auth/signup" className="text-lg px-8 py-4">
+                <Button
+                  size="lg"
+                  href="/auth/signup"
+                  className="text-lg px-8 py-4"
+                >
                   Get Started
                 </Button>
                 <Button

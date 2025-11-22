@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/Card";
+import { Card, CardContent } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import Link from "next/link";
@@ -30,7 +30,7 @@ export default function LoginPage() {
       localStorage.setItem("auth_token", "mock_token_123");
 
       router.push("/home");
-    } catch (err) {
+    } catch {
       setError("Invalid email or password");
     } finally {
       setIsLoading(false);
@@ -44,8 +44,12 @@ export default function LoginPage() {
           <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-600 rounded-2xl mb-4">
             <span className="text-white font-bold text-2xl">C</span>
           </div>
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Welcome back</h1>
-          <p className="text-gray-600 dark:text-gray-400">Sign in to your CommUnity account</p>
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+            Welcome back
+          </h1>
+          <p className="text-gray-600 dark:text-gray-400">
+            Sign in to your CommUnity account
+          </p>
         </div>
 
         <Card>
@@ -104,7 +108,7 @@ export default function LoginPage() {
 
             <div className="mt-6 text-center">
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                Don't have an account?{" "}
+                Don&apos;t have an account?{" "}
                 <Link
                   href="/auth/signup"
                   className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium"
@@ -128,4 +132,3 @@ export default function LoginPage() {
     </div>
   );
 }
-

@@ -72,7 +72,7 @@ export default function FAQPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <WebsiteNavbar />
-      
+
       <main className="flex-1">
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 py-20">
@@ -135,8 +135,8 @@ export default function FAQPage() {
                 Still have questions?
               </h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Can't find the answer you're looking for? Please reach out to our
-                friendly team.
+                Can&apos;t find the answer you&apos;re looking for? Please reach
+                out to our friendly team.
               </p>
               <a
                 href="/contact"
@@ -153,4 +153,3 @@ export default function FAQPage() {
     </div>
   );
 }
-

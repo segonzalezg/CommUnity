@@ -3,7 +3,8 @@
  * Handles all API requests with proper error handling and authentication
  */
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001/api";
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001/api";
 
 export interface ApiError {
   message: string;
@@ -22,9 +23,8 @@ export class ApiClient {
     endpoint: string,
     options: RequestInit = {}
   ): Promise<T> {
-    const token = typeof window !== "undefined" 
-      ? localStorage.getItem("auth_token") 
-      : null;
+    const token =
+      typeof window !== "undefined" ? localStorage.getItem("auth_token") : null;
 
     const headers: Record<string, string> = {
       "Content-Type": "application/json",
@@ -88,4 +88,3 @@ export class ApiClient {
 }
 
 export const apiClient = new ApiClient();
-

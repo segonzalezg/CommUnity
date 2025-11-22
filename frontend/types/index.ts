@@ -98,4 +98,3 @@ export interface LeaderboardEntry {
   rank: number;
   badgesCount: number;
 }
-

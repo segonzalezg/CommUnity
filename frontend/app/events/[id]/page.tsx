@@ -1,7 +1,7 @@
 "use client";
 
 import { Layout } from "@/components/layout/Layout";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/Card";
+import { Card, CardContent } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -173,8 +173,7 @@ export default function EventDetailPage() {
                     Volunteers
                   </h3>
                   <p className="text-gray-900">
-                    {event.currentVolunteers} / {event.maxVolunteers}{" "}
-                    registered
+                    {event.currentVolunteers} / {event.maxVolunteers} registered
                     {!isFull && (
                       <span className="text-green-600 ml-2">
                         ({spotsRemaining} spots remaining)
@@ -240,4 +239,3 @@ export default function EventDetailPage() {
     </Layout>
   );
 }
-

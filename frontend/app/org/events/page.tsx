@@ -3,7 +3,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Event } from "@/types";
 import { formatDate } from "@/lib/utils";
@@ -68,10 +67,10 @@ export default function OrgEventsPage() {
       <div className="space-y-6">
         <div className="flex justify-between items-center">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">
-              My Events
-            </h1>
-            <p className="text-gray-600">Manage all your organization's events</p>
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">My Events</h1>
+            <p className="text-gray-600">
+              Manage all your organization&apos;s events
+            </p>
           </div>
           <Button href="/org/events/create">Create New Event</Button>
         </div>
@@ -126,12 +125,16 @@ export default function OrgEventsPage() {
                         d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
                       />
                     </svg>
-                    {event.currentVolunteers} / {event.maxVolunteers}{" "}
-                    volunteers
+                    {event.currentVolunteers} / {event.maxVolunteers} volunteers
                   </div>
                 </div>
                 <div className="flex space-x-2">
-                  <Button size="sm" variant="outline" className="flex-1" href={`/org/events/${event.id}`}>
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    className="flex-1"
+                    href={`/org/events/${event.id}`}
+                  >
                     Edit
                   </Button>
                   <Button size="sm" variant="outline" className="flex-1">
@@ -146,4 +149,3 @@ export default function OrgEventsPage() {
     </Layout>
   );
 }
-

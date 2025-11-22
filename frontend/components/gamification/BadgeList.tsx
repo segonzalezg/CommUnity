@@ -1,7 +1,7 @@
 "use client";
 
 import { Badge, Achievement } from "@/types";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/Card";
+import { Card, CardContent } from "@/components/ui/Card";
 import { formatDate } from "@/lib/utils";
 
 export interface BadgeListProps {
@@ -61,4 +61,3 @@ export function BadgeList({ achievements, badges }: BadgeListProps) {
     </div>
   );
 }
-

@@ -5,14 +5,16 @@ import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { useEffect, useState, useRef } from "react";
-import { Message, User } from "@/types";
+import { Message, User, UserRole } from "@/types";
 import { formatRelativeTime } from "@/lib/utils";
 
 export default function MessagesPage() {
   const [conversations, setConversations] = useState<
     Array<{ user: User; lastMessage: Message }>
   >([]);
-  const [selectedConversation, setSelectedConversation] = useState<string | null>(null);
+  const [selectedConversation, setSelectedConversation] = useState<
+    string | null
+  >(null);
   const [messages, setMessages] = useState<Message[]>([]);
   const [newMessage, setNewMessage] = useState("");
   const [loading, setLoading] = useState(true);
@@ -29,7 +31,7 @@ export default function MessagesPage() {
           displayName: "Sarah Organizer",
           isEmailVerified: true,
           isActive: true,
-          role: "ORGANIZER" as any,
+          role: UserRole.ADMIN,
           createdAt: new Date().toISOString(),
           updatedAt: new Date().toISOString(),
         },
@@ -49,7 +51,7 @@ export default function MessagesPage() {
           displayName: "Mike Volunteer",
           isEmailVerified: true,
           isActive: true,
-          role: "USER" as any,
+          role: UserRole.USER,
           createdAt: new Date().toISOString(),
           updatedAt: new Date().toISOString(),
         },
@@ -262,4 +264,3 @@ export default function MessagesPage() {
     </Layout>
   );
 }
-

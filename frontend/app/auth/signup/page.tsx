@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/Card";
+import { Card, CardContent } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import Link from "next/link";
@@ -70,7 +70,7 @@ export default function SignupPage() {
       localStorage.setItem("auth_token", "mock_token_123");
 
       router.push("/home");
-    } catch (err) {
+    } catch {
       setErrors({ submit: "An error occurred. Please try again." });
     } finally {
       setIsLoading(false);
@@ -166,7 +166,10 @@ export default function SignupPage() {
                   className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                   required
                 />
-                <label htmlFor="terms" className="ml-2 text-sm text-gray-600 dark:text-gray-400">
+                <label
+                  htmlFor="terms"
+                  className="ml-2 text-sm text-gray-600 dark:text-gray-400"
+                >
                   I agree to the{" "}
                   <Link
                     href="/terms"
@@ -206,4 +209,3 @@ export default function SignupPage() {
     </div>
   );
 }
-

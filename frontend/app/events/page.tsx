@@ -4,7 +4,6 @@ import { Layout } from "@/components/layout/Layout";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Event } from "@/types";
 import { formatDate } from "@/lib/utils";
@@ -31,7 +30,8 @@ export default function EventsPage() {
       {
         id: "1",
         title: "Community Garden Cleanup",
-        description: "Help clean up and maintain the community garden. We need volunteers to help with weeding, planting, and general maintenance.",
+        description:
+          "Help clean up and maintain the community garden. We need volunteers to help with weeding, planting, and general maintenance.",
         startDate: new Date(Date.now() + 86400000).toISOString(),
         endDate: new Date(Date.now() + 86400000 + 3600000).toISOString(),
         location: "Central Park",
@@ -47,7 +47,8 @@ export default function EventsPage() {
       {
         id: "2",
         title: "Food Bank Distribution",
-        description: "Help distribute food to families in need. Volunteers will help sort, pack, and distribute food items.",
+        description:
+          "Help distribute food to families in need. Volunteers will help sort, pack, and distribute food items.",
         startDate: new Date(Date.now() + 172800000).toISOString(),
         endDate: new Date(Date.now() + 172800000 + 7200000).toISOString(),
         location: "Community Center",
@@ -63,7 +64,8 @@ export default function EventsPage() {
       {
         id: "3",
         title: "Coding Workshop for Kids",
-        description: "Teach basic programming concepts to children aged 8-12. No prior experience required!",
+        description:
+          "Teach basic programming concepts to children aged 8-12. No prior experience required!",
         startDate: new Date(Date.now() + 259200000).toISOString(),
         endDate: new Date(Date.now() + 259200000 + 10800000).toISOString(),
         location: "Tech Hub",
@@ -79,7 +81,8 @@ export default function EventsPage() {
       {
         id: "4",
         title: "Beach Cleanup Day",
-        description: "Join us for a beach cleanup to protect marine life and keep our beaches beautiful.",
+        description:
+          "Join us for a beach cleanup to protect marine life and keep our beaches beautiful.",
         startDate: new Date(Date.now() + 345600000).toISOString(),
         endDate: new Date(Date.now() + 345600000 + 1800000).toISOString(),
         location: "Sunset Beach",
@@ -164,7 +167,8 @@ export default function EventsPage() {
             </select>
           </div>
           <div className="text-sm text-gray-600 dark:text-gray-400">
-            Found {filteredEvents.length} event{filteredEvents.length !== 1 ? "s" : ""}
+            Found {filteredEvents.length} event
+            {filteredEvents.length !== 1 ? "s" : ""}
           </div>
         </div>
 
@@ -190,7 +194,9 @@ export default function EventsPage() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm mb-4 line-clamp-3">{event.description}</p>
+                  <p className="text-sm mb-4 line-clamp-3">
+                    {event.description}
+                  </p>
                   <div className="space-y-2 mb-4">
                     <div className="flex items-center text-sm text-gray-600 dark:text-gray-400">
                       <svg
@@ -270,4 +276,3 @@ export default function EventsPage() {
     </Layout>
   );
 }
-

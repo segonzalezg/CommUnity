@@ -4,10 +4,8 @@ import { Layout } from "@/components/layout/Layout";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { XPBar } from "@/components/gamification/XPBar";
-import Link from "next/link";
 import { useEffect, useState } from "react";
-import { apiClient } from "@/lib/api";
-import { User, Event } from "@/types";
+import { User, Event, UserRole } from "@/types";
 
 export default function HomePage() {
   const [user, setUser] = useState<User | null>(null);
@@ -25,7 +23,7 @@ export default function HomePage() {
       bio: "Passionate volunteer",
       isEmailVerified: true,
       isActive: true,
-      role: "USER" as any,
+      role: UserRole.USER,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
       xp: 1250,
@@ -80,9 +78,6 @@ export default function HomePage() {
     );
   }
 
-  const xpForNextLevel = user?.level ? (user.level * 500) : 500;
-  const xpProgress = user?.xp ? (user.xp % 500) / 500 : 0;
-
   return (
     <Layout>
       <div className="space-y-8">
@@ -117,10 +112,7 @@ export default function HomePage() {
               <CardTitle>XP Progress</CardTitle>
             </CardHeader>
             <CardContent>
-              <XPBar
-                currentXP={user?.xp || 0}
-                level={user?.level || 1}
-              />
+              <XPBar currentXP={user?.xp || 0} level={user?.level || 1} />
             </CardContent>
           </Card>
 
@@ -129,8 +121,12 @@ export default function HomePage() {
               <CardTitle>Events Joined</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-4xl font-bold text-purple-600 dark:text-purple-400 mb-2">12</div>
-              <div className="text-sm text-gray-500 dark:text-gray-400">Total events</div>
+              <div className="text-4xl font-bold text-purple-600 dark:text-purple-400 mb-2">
+                12
+              </div>
+              <div className="text-sm text-gray-500 dark:text-gray-400">
+                Total events
+              </div>
             </CardContent>
           </Card>
         </div>
@@ -160,7 +156,9 @@ export default function HomePage() {
                   <CardTitle>{event.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm mb-4 line-clamp-2">{event.description}</p>
+                  <p className="text-sm mb-4 line-clamp-2">
+                    {event.description}
+                  </p>
                   <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
                     <svg
                       className="w-4 h-4 mr-2"
@@ -217,4 +215,3 @@ export default function HomePage() {
     </Layout>
   );
 }
-

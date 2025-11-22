@@ -19,7 +19,9 @@ export function XPBar({ currentXP, level, className }: XPBarProps) {
     <div className={cn("w-full", className)}>
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center space-x-2">
-          <span className="text-sm font-medium text-gray-700">Level {level}</span>
+          <span className="text-sm font-medium text-gray-700">
+            Level {level}
+          </span>
           <span className="text-xs text-gray-500">
             {xpInCurrentLevel} / {xpNeededForNextLevel} XP
           </span>
@@ -37,4 +39,3 @@ export function XPBar({ currentXP, level, className }: XPBarProps) {
     </div>
   );
 }
-

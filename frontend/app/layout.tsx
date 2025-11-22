@@ -16,7 +16,8 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "CommUnity - Volunteer & Gamification Platform",
-  description: "Connect with organizations, volunteer for events, and earn rewards through gamification",
+  description:
+    "Connect with organizations, volunteer for events, and earn rewards through gamification",
 };
 
 export default function RootLayout({
@@ -29,9 +30,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100`}
       >
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

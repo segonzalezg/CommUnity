@@ -1,7 +1,7 @@
 "use client";
 
 import { Layout } from "@/components/layout/Layout";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/Card";
+import { Card, CardContent } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { useRouter } from "next/navigation";
@@ -88,7 +88,7 @@ export default function CreateEventPage() {
       // TODO: Connect to API
       await new Promise((resolve) => setTimeout(resolve, 1000));
       router.push("/org/events");
-    } catch (err) {
+    } catch {
       setErrors({ submit: "An error occurred. Please try again." });
     } finally {
       setIsLoading(false);
@@ -285,4 +285,3 @@ export default function CreateEventPage() {
     </Layout>
   );
 }
-

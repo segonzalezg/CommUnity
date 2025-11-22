@@ -74,4 +74,3 @@ export function AchievementPopup({ badge, onClose }: AchievementPopupProps) {
     </div>
   );
 }
-

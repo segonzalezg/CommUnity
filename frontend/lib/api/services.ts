@@ -131,12 +131,8 @@ export const organizationService = {
     return apiClient.patch<Organization>(`/organizations/${id}`, data);
   },
 
-  getOrganizationEvents: async (
-    organizationId: string
-  ): Promise<Event[]> => {
-    return apiClient.get<Event[]>(
-      `/organizations/${organizationId}/events`
-    );
+  getOrganizationEvents: async (organizationId: string): Promise<Event[]> => {
+    return apiClient.get<Event[]>(`/organizations/${organizationId}/events`);
   },
 };
 
@@ -193,4 +189,3 @@ export const messagingService = {
     return apiClient.patch<void>(`/messages/${messageId}/read`, {});
   },
 };
-

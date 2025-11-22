@@ -18,7 +18,7 @@ export default function ContactPage() {
     e.preventDefault();
     // Handle form submission here
     console.log("Form submitted:", formData);
-    alert("Thank you for your message! We'll get back to you soon.");
+    alert("Thank you for your message! We&apos;ll get back to you soon.");
     setFormData({ name: "", email: "", subject: "", message: "" });
   };
 
@@ -34,7 +34,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <WebsiteNavbar />
-      
+
       <main className="flex-1">
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 py-20">
@@ -43,8 +43,8 @@ export default function ContactPage() {
               Get in Touch
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-400">
-              Have questions? We'd love to hear from you. Send us a message and
-              we'll respond as soon as possible.
+              Have questions? We&apos;d love to hear from you. Send us a message
+              and we&apos;ll respond as soon as possible.
             </p>
           </div>
         </section>
@@ -235,7 +235,8 @@ export default function ContactPage() {
                     Need immediate help?
                   </h3>
                   <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
-                    Check out our FAQ page for quick answers to common questions.
+                    Check out our FAQ page for quick answers to common
+                    questions.
                   </p>
                   <Button variant="outline" size="sm" href="/faq">
                     Visit FAQ
@@ -251,4 +252,3 @@ export default function ContactPage() {
     </div>
   );
 }
-

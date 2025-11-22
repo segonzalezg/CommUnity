@@ -4,7 +4,8 @@ import React from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "outline" | "ghost" | "danger";
   size?: "sm" | "md" | "lg";
   isLoading?: boolean;
@@ -49,12 +50,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       lg: "px-6 py-3 text-lg",
     };
 
-    const classes = cn(
-      baseStyles,
-      variants[variant],
-      sizes[size],
-      className
-    );
+    const classes = cn(baseStyles, variants[variant], sizes[size], className);
 
     const content = isLoading ? (
       <>
@@ -106,4 +102,3 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 );
 
 Button.displayName = "Button";
-

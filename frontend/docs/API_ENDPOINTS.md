@@ -3,6 +3,7 @@
 This document lists all the API endpoints that the frontend expects from the backend.
 
 ## Base URL
+
 ```
 http://localhost:3001/api
 ```
@@ -10,9 +11,11 @@ http://localhost:3001/api
 ## Authentication
 
 ### POST /auth/login
+
 Login a user.
 
 **Request Body:**
+
 ```json
 {
   "email": "user@example.com",
@@ -21,17 +24,22 @@ Login a user.
 ```
 
 **Response:**
+
 ```json
 {
   "token": "jwt_token_here",
-  "user": { /* User object */ }
+  "user": {
+    /* User object */
+  }
 }
 ```
 
 ### POST /auth/signup
+
 Register a new user.
 
 **Request Body:**
+
 ```json
 {
   "email": "user@example.com",
@@ -42,27 +50,36 @@ Register a new user.
 ```
 
 **Response:**
+
 ```json
 {
   "token": "jwt_token_here",
-  "user": { /* User object */ }
+  "user": {
+    /* User object */
+  }
 }
 ```
 
 ## Users
 
 ### GET /users/me
+
 Get current authenticated user.
 
 **Response:**
+
 ```json
-{ /* User object */ }
+{
+  /* User object */
+}
 ```
 
 ### PATCH /users/me
+
 Update current user's profile.
 
 **Request Body:**
+
 ```json
 {
   "displayName": "John Doe",
@@ -72,49 +89,69 @@ Update current user's profile.
 ```
 
 **Response:**
+
 ```json
-{ /* Updated User object */ }
+{
+  /* Updated User object */
+}
 ```
 
 ### GET /users/:id
+
 Get user by ID.
 
 **Response:**
+
 ```json
-{ /* User object */ }
+{
+  /* User object */
+}
 ```
 
 ## Events
 
 ### GET /events
+
 Get list of events with optional filters.
 
 **Query Parameters:**
+
 - `category` (optional): Filter by category
 - `search` (optional): Search in title, description, tags
 - `page` (optional): Page number for pagination
 - `limit` (optional): Items per page
 
 **Response:**
+
 ```json
 [
-  { /* Event object */ },
-  { /* Event object */ }
+  {
+    /* Event object */
+  },
+  {
+    /* Event object */
+  }
 ]
 ```
 
 ### GET /events/:id
+
 Get event by ID.
 
 **Response:**
+
 ```json
-{ /* Event object */ }
+{
+  /* Event object */
+}
 ```
 
 ### POST /events
+
 Create a new event (requires ORGANIZER role).
 
 **Request Body:**
+
 ```json
 {
   "title": "Event Title",
@@ -129,14 +166,19 @@ Create a new event (requires ORGANIZER role).
 ```
 
 **Response:**
+
 ```json
-{ /* Event object */ }
+{
+  /* Event object */
+}
 ```
 
 ### PATCH /events/:id
+
 Update an event (requires ORGANIZER role).
 
 **Request Body:**
+
 ```json
 {
   "title": "Updated Title",
@@ -145,30 +187,39 @@ Update an event (requires ORGANIZER role).
 ```
 
 **Response:**
+
 ```json
-{ /* Updated Event object */ }
+{
+  /* Updated Event object */
+}
 ```
 
 ### DELETE /events/:id
+
 Delete an event (requires ORGANIZER role).
 
 **Response:**
+
 ```json
 { "message": "Event deleted successfully" }
 ```
 
 ### POST /events/:id/register
+
 Register current user for an event.
 
 **Response:**
+
 ```json
 { "message": "Registered successfully" }
 ```
 
 ### DELETE /events/:id/register
+
 Unregister current user from an event.
 
 **Response:**
+
 ```json
 { "message": "Unregistered successfully" }
 ```
@@ -176,28 +227,40 @@ Unregister current user from an event.
 ## Organizations
 
 ### GET /organizations
+
 Get list of organizations.
 
 **Response:**
+
 ```json
 [
-  { /* Organization object */ },
-  { /* Organization object */ }
+  {
+    /* Organization object */
+  },
+  {
+    /* Organization object */
+  }
 ]
 ```
 
 ### GET /organizations/:id
+
 Get organization by ID.
 
 **Response:**
+
 ```json
-{ /* Organization object */ }
+{
+  /* Organization object */
+}
 ```
 
 ### POST /organizations
+
 Create a new organization.
 
 **Request Body:**
+
 ```json
 {
   "name": "Organization Name",
@@ -207,14 +270,19 @@ Create a new organization.
 ```
 
 **Response:**
+
 ```json
-{ /* Organization object */ }
+{
+  /* Organization object */
+}
 ```
 
 ### PATCH /organizations/:id
+
 Update an organization.
 
 **Request Body:**
+
 ```json
 {
   "name": "Updated Name",
@@ -223,100 +291,148 @@ Update an organization.
 ```
 
 **Response:**
+
 ```json
-{ /* Updated Organization object */ }
+{
+  /* Updated Organization object */
+}
 ```
 
 ### GET /organizations/:id/events
+
 Get events for an organization.
 
 **Response:**
+
 ```json
 [
-  { /* Event object */ },
-  { /* Event object */ }
+  {
+    /* Event object */
+  },
+  {
+    /* Event object */
+  }
 ]
 ```
 
 ## Gamification
 
 ### GET /badges
+
 Get all available badges.
 
 **Response:**
+
 ```json
 [
-  { /* Badge object */ },
-  { /* Badge object */ }
+  {
+    /* Badge object */
+  },
+  {
+    /* Badge object */
+  }
 ]
 ```
 
 ### GET /users/me/achievements
+
 Get current user's achievements.
 
 **Response:**
+
 ```json
 [
-  { /* Achievement object */ },
-  { /* Achievement object */ }
+  {
+    /* Achievement object */
+  },
+  {
+    /* Achievement object */
+  }
 ]
 ```
 
 ### GET /users/:id/achievements
+
 Get achievements for a specific user.
 
 **Response:**
+
 ```json
 [
-  { /* Achievement object */ },
-  { /* Achievement object */ }
+  {
+    /* Achievement object */
+  },
+  {
+    /* Achievement object */
+  }
 ]
 ```
 
 ### GET /leaderboard
+
 Get leaderboard entries.
 
 **Query Parameters:**
+
 - `period` (optional): "all" | "month" | "week"
 
 **Response:**
+
 ```json
 [
-  { /* LeaderboardEntry object */ },
-  { /* LeaderboardEntry object */ }
+  {
+    /* LeaderboardEntry object */
+  },
+  {
+    /* LeaderboardEntry object */
+  }
 ]
 ```
 
 ## Messaging
 
 ### GET /messages/conversations
+
 Get all conversations for current user.
 
 **Response:**
+
 ```json
 [
   {
-    "user": { /* User object */ },
-    "lastMessage": { /* Message object */ }
+    "user": {
+      /* User object */
+    },
+    "lastMessage": {
+      /* Message object */
+    }
   }
 ]
 ```
 
 ### GET /messages/conversations/:userId
+
 Get messages in a conversation with a specific user.
 
 **Response:**
+
 ```json
 [
-  { /* Message object */ },
-  { /* Message object */ }
+  {
+    /* Message object */
+  },
+  {
+    /* Message object */
+  }
 ]
 ```
 
 ### POST /messages
+
 Send a message.
 
 **Request Body:**
+
 ```json
 {
   "receiverId": "user_id",
@@ -325,14 +441,19 @@ Send a message.
 ```
 
 **Response:**
+
 ```json
-{ /* Message object */ }
+{
+  /* Message object */
+}
 ```
 
 ### PATCH /messages/:id/read
+
 Mark a message as read.
 
 **Response:**
+
 ```json
 { "message": "Message marked as read" }
 ```
@@ -340,6 +461,7 @@ Mark a message as read.
 ## Data Models
 
 ### User
+
 ```typescript
 {
   id: string;
@@ -361,6 +483,7 @@ Mark a message as read.
 ```
 
 ### Event
+
 ```typescript
 {
   id: string;
@@ -383,6 +506,7 @@ Mark a message as read.
 ```
 
 ### Organization
+
 ```typescript
 {
   id: string;
@@ -402,6 +526,7 @@ Mark a message as read.
 ```
 
 ### Badge
+
 ```typescript
 {
   id: string;
@@ -414,6 +539,7 @@ Mark a message as read.
 ```
 
 ### Achievement
+
 ```typescript
 {
   id: string;
@@ -425,6 +551,7 @@ Mark a message as read.
 ```
 
 ### LeaderboardEntry
+
 ```typescript
 {
   userId: string;
@@ -437,6 +564,7 @@ Mark a message as read.
 ```
 
 ### Message
+
 ```typescript
 {
   id: string;
@@ -449,4 +577,3 @@ Mark a message as read.
   readAt?: string;
 }
 ```
-

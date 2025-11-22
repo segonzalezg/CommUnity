@@ -3,7 +3,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Organization, Event } from "@/types";
 
@@ -161,7 +160,9 @@ export default function OrgDashboardPage() {
                   <CardTitle>{event.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm mb-4 line-clamp-2">{event.description}</p>
+                  <p className="text-sm mb-4 line-clamp-2">
+                    {event.description}
+                  </p>
                   <div className="flex items-center text-sm text-gray-500 mb-2">
                     <svg
                       className="w-4 h-4 mr-2"
@@ -183,7 +184,11 @@ export default function OrgDashboardPage() {
                       {event.currentVolunteers} / {event.maxVolunteers}{" "}
                       volunteers
                     </span>
-                    <Button size="sm" variant="outline" href={`/org/events/${event.id}`}>
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      href={`/org/events/${event.id}`}
+                    >
                       Manage
                     </Button>
                   </div>
@@ -196,4 +201,3 @@ export default function OrgDashboardPage() {
     </Layout>
   );
 }
-

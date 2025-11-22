@@ -3,11 +3,13 @@
 import { Layout } from "@/components/layout/Layout";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/Card";
 import { useEffect, useState } from "react";
-import { LeaderboardEntry } from "@/types";
+import { LeaderboardEntry, UserRole } from "@/types";
 
 export default function LeaderboardsPage() {
   const [leaderboard, setLeaderboard] = useState<LeaderboardEntry[]>([]);
-  const [selectedPeriod, setSelectedPeriod] = useState<"all" | "month" | "week">("all");
+  const [selectedPeriod, setSelectedPeriod] = useState<
+    "all" | "month" | "week"
+  >("all");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -22,7 +24,7 @@ export default function LeaderboardsPage() {
           displayName: "Alice Johnson",
           isEmailVerified: true,
           isActive: true,
-          role: "USER" as any,
+          role: UserRole.USER,
           createdAt: new Date().toISOString(),
           updatedAt: new Date().toISOString(),
           xp: 3500,
@@ -42,7 +44,7 @@ export default function LeaderboardsPage() {
           displayName: "Bob Smith",
           isEmailVerified: true,
           isActive: true,
-          role: "USER" as any,
+          role: UserRole.USER,
           createdAt: new Date().toISOString(),
           updatedAt: new Date().toISOString(),
           xp: 2800,
@@ -62,7 +64,7 @@ export default function LeaderboardsPage() {
           displayName: "Charlie Brown",
           isEmailVerified: true,
           isActive: true,
-          role: "USER" as any,
+          role: UserRole.USER,
           createdAt: new Date().toISOString(),
           updatedAt: new Date().toISOString(),
           xp: 2400,
@@ -82,7 +84,7 @@ export default function LeaderboardsPage() {
           displayName: "Diana Prince",
           isEmailVerified: true,
           isActive: true,
-          role: "USER" as any,
+          role: UserRole.USER,
           createdAt: new Date().toISOString(),
           updatedAt: new Date().toISOString(),
           xp: 2100,
@@ -102,7 +104,7 @@ export default function LeaderboardsPage() {
           displayName: "Eve Wilson",
           isEmailVerified: true,
           isActive: true,
-          role: "USER" as any,
+          role: UserRole.USER,
           createdAt: new Date().toISOString(),
           updatedAt: new Date().toISOString(),
           xp: 1800,
@@ -151,7 +153,7 @@ export default function LeaderboardsPage() {
             Leaderboards
           </h1>
           <p className="text-gray-600">
-            See who's making the biggest impact in the community
+            See who&apos;s making the biggest impact in the community
           </p>
         </div>
 
@@ -252,4 +254,3 @@ export default function LeaderboardsPage() {
     </Layout>
   );
 }
-

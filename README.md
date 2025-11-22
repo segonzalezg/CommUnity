@@ -30,18 +30,17 @@ CommUnity is a volunteering platform that gamifies the volunteer experience, hel
 
 2. **Install dependencies**
    ```bash
-   # Install frontend dependencies
-   cd frontend
+   # Install frontend dependencies (at root)
    npm install
    
    # Install backend dependencies
-   cd ../backend
+   cd backend
    npm install
    ```
 
 3. **Set up environment variables**
    
-   Frontend: Create `frontend/.env.local`:
+   Frontend: Create `.env.local` at the root:
    ```env
    NEXT_PUBLIC_API_URL=http://localhost:3001/api
    ```
@@ -60,8 +59,7 @@ CommUnity is a volunteering platform that gamifies the volunteer experience, hel
    cd backend
    npm run dev
    
-   # Terminal 2: Start frontend
-   cd frontend
+   # Terminal 2: Start frontend (from root)
    npm run dev
    ```
 
@@ -82,7 +80,7 @@ A modern Next.js 14 frontend application for the CommUnity volunteer and gamific
 ### Frontend Commands
 
 ```bash
-cd frontend
+# All commands run from the repository root
 
 # Install dependencies
 npm install
@@ -103,7 +101,7 @@ npm run lint
 ### Frontend Project Structure
 
 ```
-frontend/
+.
 ├── app/                    # Next.js app router pages
 │   ├── auth/              # Authentication pages
 │   ├── events/            # Event discovery pages
@@ -120,8 +118,7 @@ frontend/
 │   ├── api/              # API client and services
 │   ├── theme.ts          # Theme configuration
 │   └── utils.ts          # Utility functions
-├── types/                # TypeScript type definitions
-└── docs/                 # Documentation
+└── types/                # TypeScript type definitions
 ```
 
 ### Frontend Features

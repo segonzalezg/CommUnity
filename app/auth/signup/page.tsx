@@ -192,7 +192,7 @@ export default function SignupPage() {
               </Button>
             </form>
 
-            <div className="mt-6 text-center">
+            <div className="mt-6 text-center space-y-2">
               <p className="text-sm text-gray-600 dark:text-gray-400">
                 Already have an account?{" "}
                 <Link
@@ -200,6 +200,15 @@ export default function SignupPage() {
                   className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium"
                 >
                   Sign in
+                </Link>
+              </p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                Representing an organization?{" "}
+                <Link
+                  href="/auth/org-signup"
+                  className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium"
+                >
+                  Sign up as an Organization
                 </Link>
               </p>
             </div>

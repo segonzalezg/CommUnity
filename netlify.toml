@@ -1,5 +1,8 @@
 [build]
   command = "npm install && npm run build"
+  # Publish directory will be handled by the Next.js plugin
+  # Setting to .next temporarily - plugin will override this
+  publish = ".next"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"

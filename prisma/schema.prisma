@@ -1,0 +1,86 @@
+// Prisma Schema Placeholder
+// This file contains empty model definitions as placeholders for future database implementation
+// See /docs/data_model.md for complete field definitions and relationships
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql" // TODO: Update based on chosen database
+  url      = env("DATABASE_URL")
+}
+
+// ============================================
+// Model Definitions (Placeholders)
+// ============================================
+// NOTE: Fields will be added during implementation phase
+// Refer to /docs/data_model.md for complete specifications
+
+model User {
+  // Fields to be added
+  // See /docs/data_model.md for complete field definitions
+}
+
+model Organization {
+  // Fields to be added
+  // See /docs/data_model.md for complete field definitions
+}
+
+model Event {
+  // Fields to be added
+  // See /docs/data_model.md for complete field definitions
+}
+
+model Message {
+  // Fields to be added
+  // See /docs/data_model.md for complete field definitions
+}
+
+model Badge {
+  // Fields to be added
+  // See /docs/data_model.md for complete field definitions
+}
+
+model Achievement {
+  // Fields to be added
+  // See /docs/data_model.md for complete field definitions
+}
+
+// ============================================
+// Join Tables (Many-to-Many Relationships)
+// ============================================
+// These will be created during implementation phase
+
+model UserOrganization {
+  // Join table for User <-> Organization (membership)
+  // Fields: userId, organizationId, role, joinedAt
+}
+
+model UserEvent {
+  // Join table for User <-> Event (attendance)
+  // Fields: userId, eventId, status, registeredAt
+}
+
+model UserBadge {
+  // Join table for User <-> Badge (earned badges)
+  // Fields: userId, badgeId, earnedAt
+}
+
+model UserAchievement {
+  // Join table for User <-> Achievement (unlocked achievements)
+  // Fields: userId, achievementId, unlockedAt, pointsAwarded
+}
+
+// ============================================
+// Future Migration Steps
+// ============================================
+// 1. Define all fields for each model
+// 2. Add relationships (@relation directives)
+// 3. Add indexes (@@index)
+// 4. Add unique constraints (@@unique)
+// 5. Add default values (@default)
+// 6. Add enums (enum definitions)
+// 7. Run: npx prisma migrate dev --name init
+// 8. Generate Prisma Client: npx prisma generate
+

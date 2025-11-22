@@ -1,0 +1,122 @@
+[
+  {
+    "id": "first_achievement",
+    "name": "Getting Started",
+    "description": "Unlock your first badge",
+    "icon": "🎯",
+    "category": "milestone",
+    "points": 100,
+    "requirements": [
+      {
+        "type": "badge_count",
+        "condition": ">=",
+        "threshold": 1
+      }
+    ]
+  },
+  {
+    "id": "badge_collector",
+    "name": "Badge Collector",
+    "description": "Unlock 5 badges",
+    "icon": "🏅",
+    "category": "milestone",
+    "points": 200,
+    "requirements": [
+      {
+        "type": "badge_count",
+        "condition": ">=",
+        "threshold": 5
+      }
+    ]
+  },
+  {
+    "id": "badge_master",
+    "name": "Badge Master",
+    "description": "Unlock all badges",
+    "icon": "👑",
+    "category": "special",
+    "points": 500,
+    "requirements": [
+      {
+        "type": "badge_count",
+        "condition": ">=",
+        "threshold": 8
+      }
+    ]
+  },
+  {
+    "id": "level_warrior",
+    "name": "Level Warrior",
+    "description": "Reach level 10",
+    "icon": "⚔️",
+    "category": "milestone",
+    "points": 300,
+    "requirements": [
+      {
+        "type": "level_threshold",
+        "condition": ">=",
+        "threshold": 10
+      }
+    ]
+  },
+  {
+    "id": "xp_legend",
+    "name": "XP Legend",
+    "description": "Reach 10000 XP",
+    "icon": "🔥",
+    "category": "milestone",
+    "points": 400,
+    "requirements": [
+      {
+        "type": "xp_threshold",
+        "condition": ">=",
+        "threshold": 10000
+      }
+    ]
+  },
+  {
+    "id": "community_champion",
+    "name": "Community Champion",
+    "description": "Attend 100 events",
+    "icon": "🌟",
+    "category": "volunteering",
+    "points": 350,
+    "requirements": [
+      {
+        "type": "event_count",
+        "condition": ">=",
+        "threshold": 100
+      }
+    ]
+  },
+  {
+    "id": "time_philanthropist",
+    "name": "Time Philanthropist",
+    "description": "Volunteer for 200 hours",
+    "icon": "💝",
+    "category": "volunteering",
+    "points": 400,
+    "requirements": [
+      {
+        "type": "hours_volunteered",
+        "condition": ">=",
+        "threshold": 200
+      }
+    ]
+  },
+  {
+    "id": "streak_master",
+    "name": "Streak Master",
+    "description": "Maintain a 30-day login streak",
+    "icon": "🔥",
+    "category": "social",
+    "points": 250,
+    "requirements": [
+      {
+        "type": "consecutive_days",
+        "condition": ">=",
+        "threshold": 30
+      }
+    ]
+  }
+]
